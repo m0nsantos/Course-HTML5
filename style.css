@@ -1,0 +1,91 @@
+h3
+{
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    padding-right: 76%;
+    margin-left: 5px;
+}
+
+.nav-wrapper .input-field input[type=search] {
+    height: inherit;
+    padding-left: 4rem;
+    width: calc(100% - 4rem);
+    border: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+
+.wrapper {
+  border-top: 10px;
+  display: grid;
+  justify-items: center;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: #eee;
+  color: #000;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 20px;
+  width: 600px;
+  font-size: 100%;
+  
+}
+
+
+a{
+    color: #eeeeee;
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+    margin-left: 5px;
+}
+
+nav{
+    background-color: turquoise;
+}
+
+img{
+    size: 20px 20px;
+    border-color: black;
+    width: 40px;
+    height: 40px;
+    border-width: 1px;
+    margin-top: 13px;
+    margin-left: 5px;
+    padding-right: 15;
+
+}
+
+.header{
+    background-color: rgb(39, 207, 212);
+    display: inline-flex;
+    width: 1350px;
+
+}
+
+.cadastro-box{
+    display: flex;
+    justify-content: center;
+}
+.row{
+    margin: 30px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.flex{
+    margin: 30px;
+    border: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}

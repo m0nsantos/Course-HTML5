@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo">E-Lixo Sorocaba</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="cadastro.html">Cadastre-se</a></li>
+              <li><a href="pontos.html">Pontos de Coleta</a></li>
+              <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="cadastro-box">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Nome completo</label>
+            </div>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">email</i>
+              <input id="icon_telephone" type="tel" class="validate">
+              <label for="icon_telephone">E-mail</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">location_on</i>
+                <input id="icon_telephone" type="text" class="validate">
+                <label for="icon_telephone">Endereço</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">lock</i>
+                <input id="icon_telephone" type="password" class="validate">
+                <label for="icon_telephone">Senha</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">lock</i>
+                <input id="icon_telephone" type="password" class="validate">
+                <label for="icon_telephone">Confirmar senha</label>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="button">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+            
+
+</body>
+</html>
