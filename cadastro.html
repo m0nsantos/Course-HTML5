@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
     <nav>
         <div class="nav-wrapper">
@@ -33,14 +33,42 @@
               <label for="icon_prefix">Nome completo</label>
             </div>
             <div class="input-field col s12">
+              <i class="material-icons prefix">person</i>
+              <input id="cnpj" type="text" class="validate">
+              <label for="cnpj">CNPJ</label>
+            </div>
+            <div class="input-field col s12">
               <i class="material-icons prefix">email</i>
               <input id="icon_telephone" type="tel" class="validate">
               <label for="icon_telephone">E-mail</label>
             </div>
             <div class="input-field col s12">
+              <i class="material-icons prefix">contact_phone</i>
+              <input id="icon_telephone" type="tel" class="validate">
+              <label for="icon_telephone">Telefone</label>
+            </div>
+            <div class="input-field col s12">
                 <i class="material-icons prefix">location_on</i>
-                <input id="icon_telephone" type="text" class="validate">
-                <label for="icon_telephone">Endereço</label>
+                <input id="icon_endereco" type="text" class="validate">
+                <label for="icon_endereco">Endereço</label>
+              </div>
+              <div class="input-field col s2">
+               <i class="material-icons prefix">location_on</i>
+                <input id="icon_num" type="number" class="validate">
+                <label for="icon_num">Numero</label>
+              </div>
+              <div class="input-field col s5">
+                <i class="material-icons prefix">location_city</i>
+                <input list="location" type="text" class="validate">
+                <label for="location">Cidade</label>
+                <datalist id="location">
+                  <option value="Sorocaba"></option>
+                </datalist>
+              </div>
+              <div class="input-field col s5">
+                <i class="material-icons prefix">location_city</i>
+                <input id="bairro" type="text" class="validate">
+                <label for="bairro">Bairro</label>
               </div>
               <div class="input-field col s6">
                 <i class="material-icons prefix">lock</i>
@@ -58,11 +86,84 @@
     </div>
 
     <div class="button">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+        <button id="btnEnviar" class="btn waves-effect waves-light" type="submit" >Cadastrar
             <i class="material-icons right">send</i>
         </button>
     </div>
-            
 
+    <footer class="footer">
+      <div class="text-footer">
+              <h5>E-lixo Sorocaba</h5>
+              <p">Ajudando a reclicar seu lixo eletrônico.</p>
+              <div class="copyright">
+                © 2020 Copyright Text
+              </div>
+      </div>
+      </footer>
+
+
+    <script>
+      document.getElementById('btnEnviar').addEventListener('click', validarCNPJ);
+      
+      //if(validarCNPJ(cnpj.value) == false){
+             //  alert("CNPJ inválido!");
+    //  }
+      
+      function validarCNPJ(cnpj) {
+ 
+        cnpj = cnpj.replace(/[^\d]+/g,'');
+
+        if(cnpj == '') return false;
+  
+        if (cnpj.length != 14)
+            return false;
+
+        // Elimina CNPJs invalidos conhecidos
+      if (cnpj == "00000000000000" || 
+        cnpj == "11111111111111" || 
+        cnpj == "22222222222222" || 
+        cnpj == "33333333333333" || 
+        cnpj == "44444444444444" || 
+        cnpj == "55555555555555" || 
+        cnpj == "66666666666666" || 
+        cnpj == "77777777777777" || 
+        cnpj == "88888888888888" || 
+        cnpj == "99999999999999")
+            return false;
+      
+      // Valida DVs
+      tamanho = cnpj.length - 2
+      numeros = cnpj.substring(0,tamanho);
+      digitos = cnpj.substring(tamanho);
+      soma = 0;
+      pos = tamanho - 7;
+      for (i = tamanho; i >= 1; i--) {
+         soma += numeros.charAt(tamanho - i) * pos--;
+           if (pos < 2)
+              pos = 9;
+      }
+      resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+          if (resultado != digitos.charAt(0))
+                return false;
+      
+      tamanho = tamanho + 1;
+      numeros = cnpj.substring(0,tamanho);
+      soma = 0;
+      pos = tamanho - 7;
+      for (i = tamanho; i >= 1; i--) {
+         soma += numeros.charAt(tamanho - i) * pos--;
+        if (pos < 2)
+               pos = 9;
+      }
+     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+      if (resultado != digitos.charAt(1))
+       return false;
+        
+     return true;
+ 
+    }
+    </script>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

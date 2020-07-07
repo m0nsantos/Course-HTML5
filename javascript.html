@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Practice</title>
+</head>
+<body>
+    <h2 id="title">Java Script Practice</h2>
+    <button id="btn">Click Me</button>
+    <br><br><br>
+    <p class="list">This is statement 1</p>
+    <p class="list">This is statement 2</p>
+    <p class="list">This is statement 3</p>
+    <p class="list">This is statement 4</p>
+    <br><br><br>
+    <button id="btn2">Change</button>
+    <br><br><br>
+    <button id="profileBtn">Profile</button>
+
+
+    <p id="box"></p>
+    <p id="box2"></p>
+
+    <input type="text" id="user">
+    <button id="userName">Enter</button>
+    <p id="box3"></p>
+
+    <input type="text" id="addList">
+    <button id="add">Add</button>
+    <p id="box4"></p>
+
+
+    <script>
+    
+        document.getElementById('btn').addEventListener('click', chageColor);
+
+        function changeColor(){
+            document.getElementById("title").style.color = "red";
+        }
+
+
+        document.getElementById('btn2').addEventListener("click", newStyle);
+
+        function newStyle(){
+            let paragraphs = document.getElementById("list");
+            for(i =0; i < paragraphs.length; i++){
+                paragraphs[2].style.backgroundcolor = "red";
+            }
+        }
+
+        document.getElementById('profilebtn').addEventListener("click", displayProfile);
+        
+
+        function displayProfile(){
+            let firstName = "John";
+            document.getElementById("box").innerHTML = "My name is " + firstName;
+            let age = 30;
+            document.querySelector("#box2").innerHTML = "I am" + age + "years old";
+        }
+
+        let name = document.getElementById("user");
+        document.getElementById("userName").addEventListener("click", greeting);
+
+        function greeting(){
+            if(nave.value === ''){
+                alert("please fill out field");
+            }
+            else{
+                document.getElementById("box3").innerHTML = "Hello" + name.value;
+            }
+        }
+
+
+        document.getElementById('add').addEventListener("click", addItem);
+        let groceryList = ["apples", "cheese", "milk", "eggs"];
+        let displayList = groceryList.toString();
+        document.querySelector("#box4").innerHTML = displayList;
+
+        function addItem(){
+            let newItem = item.value;
+            groceryList.push(newItem);
+            let newList = groceryList.toString();
+            document.querySelector("#box4").innerHTML = newList;
+            item.value = '';
+            
+        }
+    </script>
+
+</body>
+</html>

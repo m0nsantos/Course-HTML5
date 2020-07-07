@@ -7,6 +7,16 @@ h3
     margin-left: 5px;
 }
 
+h4{
+    color: seagreen;
+    font-family: 'Open Sans', sans-serif;
+    size: 18px;
+}
+
+h5{
+    padding-left: 40px;
+}
+
 .nav-wrapper .input-field input[type=search] {
     height: inherit;
     padding-left: 4rem;
@@ -46,25 +56,23 @@ a{
 }
 
 nav{
-    background-color: turquoise;
+    background-color: teal;
 }
 
 img{
-    size: 20px 20px;
-    border-color: black;
-    width: 40px;
-    height: 40px;
-    border-width: 1px;
-    margin-top: 13px;
-    margin-left: 5px;
-    padding-right: 15;
-
+margin-top: 50px;
+grid-row: 1;
+grid-column: 2;
 }
 
-.header{
-    background-color: rgb(39, 207, 212);
-    display: inline-flex;
+.lixoe{
+   grid-row: 1;
+}
+
+.center{
+    display: grid;
     width: 1350px;
+    height: 500px;
 
 }
 
@@ -88,4 +96,33 @@ img{
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row-reverse;
+}
+
+
+.text-footer{
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    size: 18px;
+    padding: 10px 10px;
+    grid-row: 1/2;
+    grid-column: 2/2;
+}
+
+.copyright{
+    color: #000;
+    grid-row: 2/2;
+    grid-column: 2;
+    padding-left: 50px;
+}
+
+#btnEnviar{
+    scroll-padding-bottom: 40px;
+}
+
+footer{
+     background-color: teal;
+     align-items: center;
+     display: grid;
+     grid-template-columns: 550px 500px 400px;
+     align-items: center;
 }
